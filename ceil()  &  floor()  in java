@@ -1,0 +1,29 @@
+TAKE INPUT AS FLOAT NUMBER
+
+Sample Input 
+54.5
+
+Sample Output 
+54
+55.0
+54.0
+--------------------------------------------------------------------
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+    Scanner s=new Scanner(System.in);
+     float n=s.nextFloat();    
+    int x=(int)n;
+        float y=(float)Math.ceil(n);
+        float z=(float)Math.floor(n);
+        System.out.println(x);
+        System.out.println(y);
+    System.out.println(z);
+    
+    
+    }
+}
