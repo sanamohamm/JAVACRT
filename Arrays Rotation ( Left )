@@ -1,0 +1,29 @@
+Input:  6
+        23 54 11 66 33 48
+        2
+
+Output:  11 66 33 48 23 54
+-----------------------------------------------------------------------------------        
+
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int i;
+        int a[]=new inr[n];
+        for(i=0;i<n;i++){
+            a[i]=s.nextInt();
+        }
+        int k=s.nextInt();
+        for(int r=0;r<k;r++){
+            int t=a[0];
+            for(i=0;i<n-1;i++){
+                a[i]=a[i+1];
+            }
+            a[i]=t;
+        }
+        for(i=0;i<n;i++){
+        System.out.println(a[i]+" ");
+    }}
+}
