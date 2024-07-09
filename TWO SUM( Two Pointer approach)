@@ -4,6 +4,9 @@ INPUT : 9                                  5
 OUTPUT :  1 2     [ index positions ]      1 4  
 --------------------------------------------------------------------------
 
+// LEET code  Ques: 167
+
+
 import java.util.*;
 class HelloWorld {
     public static void main(String[] args) {
