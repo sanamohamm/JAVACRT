@@ -1,0 +1,26 @@
+OUTPUT:
+      3 arg int mthd
+      2 arg float mthd
+      2 arg float mthd
+      3 arg int mthd
+      3 arg int mthd
+-------------------------------------------------------------
+
+import java.util.*;
+class Test{
+    void show(int a,int b,int c){
+        System.out.println("3 arg int mthd");
+        }
+        void show(float a,float b){
+            System.out.println("2 arg float mthd");
+        
+    }
+    public static void main(String args[]){
+        Test t=new Test();
+        t.show(1,2,3);
+        t.show(3.4f,5.7f);
+         t.show(123,45);
+        t.show(1011,0011,111);
+        t.show('A','b','S');
+    }
+}
