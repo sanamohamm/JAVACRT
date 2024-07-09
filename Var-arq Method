@@ -1,0 +1,22 @@
+OUTPUT :
+      var-arq mthd:[1, 2, 3]
+      var-arq mthd:[3, 4]
+      var-arq mthd:[1, 2, 3, 4, 5]
+      var-arq mthd:[1, 3, 7, 36]
+      var-arq mthd:[]
+-----------------------------------------------------------------
+
+import java.util.*;
+class Test{
+    void show(int ...a){
+        System.out.println("var-arq mthd:"+Arrays.toString(a));
+    }
+    public static void main(String args[]){
+        Test t=new Test();
+        t.show(1,2,3);
+        t.show(3,4);
+         t.show(1,2,3,4,5);
+        t.show(1,3,7,36);
+        t.show();
+    }
+}
