@@ -1,0 +1,30 @@
+INPUT : 9                                  5
+        1 3 4 5 7 10 11 19 20              2 9 13 21 54
+        sum= 7                             sum= 63
+OUTPUT :  1 2     [ index positions ]      1 4  
+--------------------------------------------------------------------------
+
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=s.nextInt();
+        }
+        int t=s.nextInt();
+        int low=0;
+        int high=a.length-1;
+        while(low<high){
+            if(a[low]+a[high]==t){
+                 System.out.println(low+" "+high);
+            }
+            if(a[low]+a[high]<t)
+            low++;
+            else
+            high--;
+        }
+       
+    }
+}
