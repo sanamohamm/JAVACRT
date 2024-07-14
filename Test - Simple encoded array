@@ -1,0 +1,49 @@
+Encoding used: Each array elem  is substituted with a value that is the sum of its original value nd its succeeding elem's value.
+i.e.; a[i]=original value of a[i] nd original val of a[i+1]
+ex:   a[0]=original val od=f a[0] + original val of a[1]
+NOTE :  the val of last elem remains unchnaged.
+
+For Example,
+  if encoded arr is (7,6,8,16,12,3)
+  the original arr should have been (2,5,1,7,9,3)
+
+Provided the encode arr, you are expected to find the :
+    a. First num(val in index 0) in the original arr
+    b. Sum of all nums in the original arr
+
+INPUT :  n, length of arr nd integer arr
+OUTPUT : integer at index 0 of original arr, sum of all the elems of original arr
+INPUT  : 6
+         7 6 8 16 12 3
+OUTPUT : 2 27
+
+EXPLANTION : 
+            if the encoded arr is [7,6,8,16,12,3]
+            the original arr should have been (2,5,1,7,9,3)
+            Elemnet at index(0) is 2
+            sum of all the elems in the original arr 2+5+1+7+9+3 = 27
+
+---------------------------------------------------------------------------------------------------------
+
+
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=s.nextInt();
+        }
+        int b[]=new int[n];
+        b[n-1]=a[n-1];
+        for(int i=n-1;i>0;i--){
+            b[i-1]=a[i-1]-b[i];
+        }
+        int sum=0;
+        for(int i=0;i<n;i++){
+            sum+=b[i];
+        }
+        System.out.print(b[0]+" "+sum);  
+    }
+}
