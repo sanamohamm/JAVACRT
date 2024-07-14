@@ -1,0 +1,38 @@
+Read numbers until we enter -ve numbers nd save them into an array.
+HOT  number - if number end with 2.....print (-1) //ex. 12 42 672
+COLD number - if number < 50...........print (-5)
+HOT & COLD number .....................print (-6)
+else ..................................print the number itself(neither HOT nor COLD)
+
+INPUT :
+        4
+        92 61 13 42
+OUTPUT :
+        -1 61 -5 -6
+------------------------------------------------------------------------------------------------
+
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+      Scanner s= new Scanner(System.in);
+      int n=s.nextInt();
+      int a[]=new int[n];
+      for(int i=0;i<n;i++){  // reading input until we enter -ve numbers
+        a[i]=s.nextInt();
+        if(a[i]<0)
+        break;
+      }
+      for(int i=0;i<n;i++){
+        if(a[i]<50 && a[i]%10==2)
+        System.out.print("-6 ");
+        else {
+            if(a[i]<50)
+             System.out.print("-5 ");
+             else if(a[i]%10==2)
+              System.out.print("-1 ");
+              else 
+               System.out.print(a[i]+" ");
+      }
+    }
+    }
+}
