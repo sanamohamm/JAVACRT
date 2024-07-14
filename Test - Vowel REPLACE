@@ -1,0 +1,31 @@
+Given String need to be replaced nd the vowel need to be replaced by numbers from 1 to 9 in the reversed string replaced number should be appear in descending order from left to right.
+If there are more than 9 vowels, numbering should restart from 1
+INPUT :  Language
+OUTPUT:  4g32gn1L
+--------------------------------------------------------------------------------------
+
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) {
+            // Write your code here
+            Scanner s=new Scanner(System.in);
+            String s1=s.nextLine();
+            char ch[]=s1.toCharArray();
+            int num=49;
+            for(int i=0;i<ch.length;i++){
+                 if((ch[i]=='a') || (ch[i]=='e') || (ch[i]=='i') || (ch[i]=='o') || (ch[i]=='u') || (ch[i]=='A') || (ch[i]=='E') || (ch[i]=='I') || (ch[i]=='O') || (ch[i]=='U')){
+                   ch[i]=(char)num;
+                    num++;
+                 }
+                 if(num>57){
+                    num=49;
+                 }
+            }
+            for(int i=ch.length-1;i>=0;i--){
+                System.out.print(ch[i]);
+            }
+  }
+}
+
+
+
