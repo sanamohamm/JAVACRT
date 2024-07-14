@@ -1,0 +1,44 @@
+Find number for Given Factorial for given no.of test cases
+if num<=0 ..... Inavalid Input
+if it is a perfect factorial, print the number
+else print.... Sorry. It is not a perfect Factorial.
+Input  :  
+          3          // 3 test cases
+          5040
+          0
+          700
+OUTPUT :
+          7
+          Invalid Input
+          Sorry.the given number is not a perfect factorial
+-------------------------------------------------------------------------------------------------------
+
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+    Scanner s=new Scanner(System.in);
+    int t=s.nextInt();
+    int j=0;
+    while(j<t){
+     double n=s.nextDouble();
+        if(n>0){
+            double fact=1;
+            for(int i=1;i<n-1;i++){
+                fact=fact*i;
+                if(fact==n){
+                System.out.println(i);
+                break;
+                }
+                }
+           if(fact!=n){
+            System.out.println("Sorry. The given number is not a perfect factorial");
+    }
+    }
+    else{
+     System.out.println("Invalid Input");
+    }
+    j++;
+        }
+    }
+    
+    }
