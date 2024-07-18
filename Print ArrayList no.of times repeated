@@ -1,0 +1,44 @@
+INPUT: 6
+        11 22 33 11 22 11
+OUTPUT :11 3
+        22 2
+        33 1
+--------------------------------------------------------------------------------------
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Scanner;
+class HelloWorld 
+{
+public static void  main(String args[]) 
+{
+        Scanner s=new Scanner(System.in);
+        Integer n=s.nextInt();
+        Integer arr1[]=new Integer[n];
+        for(int i=0;i<n;i++)
+        {
+            arr1[i]=s.nextInt();
+        }
+        ArrayList<Integer> alist1=new ArrayList<>(Arrays.asList(arr1));          
+        ArrayList<Integer> alist2=new ArrayList<>();
+        for(Integer x: alist1)
+        {
+            if(!(alist2.contains(x)))
+            {            
+                alist2.add(x);
+            }
+        } 
+      int c;
+        for(Integer r: alist2)
+        {
+           c=0;
+            for(Integer y: alist1)
+            {
+                if(r==y)
+                    c++;
+            }
+            System.out.println(r+" "+c);
+            
+        }
+        
+        }
+}
