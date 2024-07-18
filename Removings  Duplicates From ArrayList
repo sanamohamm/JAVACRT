@@ -1,0 +1,75 @@
+---------------------------------------------------------------------------------------------
+                                    IN 2 WAYS : 
+---------------------------------------------------------------------------------------------
+INPUT:    6
+          45 57 45 7 3 57
+OUTPUT:   ArrayList Before: [45, 57, 45, 7, 3, 57]
+          ArrayList After: [45, 57, 7, 3]
+
+
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Scanner;
+class HelloWorld {
+    public static <T> ArrayList<T> removeDuplicates(ArrayList<T> al){
+        ArrayList<T> newList= new ArrayList<T>();
+        for( T element : al){
+            if(!newList.contains(element)){         // checking if arraylist-1 elemt is present in arraylist-2 or not
+                newList.add(element);               // adding arratlist-1 elems into arraylist-2
+            }
+        }
+        return newList;
+    }
+    public static void  main(String args[]) {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=s.nextInt();
+        }
+        ArrayList<Integer> al=new ArrayList<>();     // converting Array into ArrayList
+        for(int i=0;i<n;i++){                        // array elemts read into arraylist-1
+            al.add(new Integer(a[i]));
+        }
+           System.out.println("ArrayList Before: "+al);
+           ArrayList<Integer> newList=removeDuplicates(al);
+           System.out.println("ArrayList After: "+newList);
+    }
+}
+############################################################################################################
+                                   OR  DO THIS WAY
+----------------------------------------------------------------------
+INPUT :  6
+         35 5 4 3 6 3
+OUTPUT : 35 5 4 3 6 
+
+
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Scanner;
+class HelloWorld {
+public static void  main(String args[]) {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int arr1[]=new int[n];
+        for(int i=0;i<n;i++){
+            arr1[i]=s.nextInt();
+        }
+        ArrayList<Integer> alist1=new ArrayList<>();           // converting Array into ArrayList
+        ArrayList<Integer> alist2=new ArrayList<>();
+        for(int i=0;i<arr1.length;i++){
+            alist1.add(new Integer(arr1[i]));                   // array elemts read into arraylist-1
+        }
+        for(Integer x: alist1){
+            if(!alist2.contains(x)){             // checking if arraylist-1 elemt is present in arraylist-2 or not
+                alist2.add(x);                   //adding arratlist-1 elems into arraylist-2
+            }
+        } 
+        Integer[] arr2=new Integer[alist2.size()];        // coverting ArrayList into Array
+        arr2=alist2.toArray(arr2);
+        for(int i=0;i<arr2.length;i++){
+            System.out.print(arr2[i]+" ");
+        }
+        
+        }
+}
